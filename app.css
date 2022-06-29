@@ -24,3 +24,10 @@ body {
 .square-red {
     background-color: red;
 }
+.title, .header {
+    margin: 10px;
+}
+.title {
+    font-size: 32px;
+    font-weight: 800;
+}
