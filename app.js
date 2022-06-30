@@ -5,27 +5,23 @@ let squareRoot = squareNumber * squareNumber
 
 gridMaker();
 function gridMaker () {
+    const fragment = document.createDocumentFragment();
     for (let i = 0; i <squareRoot; i++){
         const div = document.createElement('div')
         div.classList.add("square");
         div.addEventListener('mouseover',changeBackground);
-        maindiv.appendChild(div);
+        fragment.appendChild(div);
     }
+    maindiv.appendChild(fragment);
 }
-
-const divSquares = document.querySelectorAll("div.square")
 
 function changeBackground(event){
-    event.target.style.backgroundColor = 'red'
-    
-    setTimeout (function() {
-        event.target.style.backgroundColor = ''
-    }, 5000)
+    event.target.style.backgroundColor = 'black'
 }
 function gridSizer () {
-    a = prompt("How many columns would you like ?",16)
-    squareNumber = a
-    maindiv = document.querySelector('#main');
+    while (maindiv.hasChildNodes()){
+        maindiv.removeChild(maindiv.firstChild);
+    }
     gridMaker ();
 }
 
